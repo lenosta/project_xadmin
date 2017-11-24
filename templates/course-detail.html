@@ -185,7 +185,10 @@ $('#jsLeftBtn').on('click', function(){
 });
 
 $('#jsRightBtn').on('click', function(){
-    add_fav($(this), {{ course.course_org.id }}, 2);
+    var id = "{{course.course_org.id}}"
+    if (id) {
+        add_fav($(this),id, 2);
+    }    
 });
 
 

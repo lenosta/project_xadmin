@@ -63,13 +63,14 @@ class CourseDetailView(View):
         has_fav_course = False
         #是否收藏机构
         has_fav_org = False
-
+        # import pydevd
+        # pydevd.settrace('192.168.74.1',port=7000,stdoutToServer=True,stderrToServer=True)
         if request.user.is_authenticated():
             if UserFavorite.objects.filter(user=request.user, fav_id=course.id, fav_type=1):
                 has_fav_course = True
-
-            if UserFavorite.objects.filter(user=request.user, fav_id=course.course_org.id, fav_type=2):
-                has_fav_org = True
+            if course.course_org:
+                if UserFavorite.objects.filter(user=request.user, fav_id=course.course_org.id, fav_type=2):
+                    has_fav_org = True
 
         tag = course.tag
         if tag:

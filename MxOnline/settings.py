@@ -26,6 +26,7 @@ SECRET_KEY = 'i2bjs06=#v_608z^d%qaz=1m9&8wldxwt9r+80^qfbmo-r#@k@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+#DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -157,5 +158,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 HOST = '192.168.74.163'
 
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
